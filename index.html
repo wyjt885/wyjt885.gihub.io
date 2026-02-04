@@ -1,0 +1,821 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>南厂路17号及机关办公楼招租方案</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", "PingFang SC", sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1a6dba 0%, #0d4d8c 100%);
+            color: white;
+            padding: 50px 20px;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.1)"/></svg>');
+            background-size: cover;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            position: relative;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+        }
+        
+        .subtitle {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .section {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+        
+        h2 {
+            color: #1a6dba;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 12px;
+            margin-bottom: 25px;
+            font-size: 1.8rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 8px;
+            height: 25px;
+            background: #1a6dba;
+            margin-right: 12px;
+            border-radius: 4px;
+        }
+        
+        h3 {
+            color: #2c3e50;
+            margin: 20px 0 12px;
+            font-size: 1.3rem;
+        }
+        
+        h4 {
+            color: #34495e;
+            margin: 15px 0 10px;
+            font-size: 1.1rem;
+        }
+        
+        .building-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 25px 0;
+        }
+        
+        .building-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #e8f4ff 100%);
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            border: 1px solid #e1e8f0;
+            text-align: center;
+        }
+        
+        .building-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .building-tag {
+            background: #1a6dba;
+            color: white;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+            display: inline-block;
+            font-weight: 600;
+        }
+        
+        .building-tag.secondary {
+            background: #28a745;
+        }
+        
+        .building-area {
+            font-size: 1.4rem;
+            color: #1a6dba;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .building-details {
+            font-size: 0.95rem;
+            color: #666;
+            margin-top: 10px;
+        }
+        
+        .overview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .overview-item {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #1a6dba;
+            transition: all 0.3s ease;
+        }
+        
+        .overview-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eaeaea;
+        }
+        
+        th {
+            background-color: #1a6dba;
+            color: white;
+            font-weight: 600;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f9fbfd;
+        }
+        
+        tr:hover {
+            background-color: #f1f7fd;
+        }
+        
+        .highlight {
+            background-color: #e8f4ff;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid #1a6dba;
+            display: flex;
+            align-items: center;
+        }
+        
+        .highlight::before {
+            content: "💡";
+            font-size: 1.5rem;
+            margin-right: 15px;
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .contact-card {
+            background: linear-gradient(135deg, #f8fafc 0%, #e8f4ff 100%);
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            border: 1px solid #e1e8f0;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-card h3 {
+            color: #1a6dba;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+        
+        .contact-phone {
+            font-size: 1.5rem;
+            color: #28a745;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #1a6dba 0%, #0d4d8c 100%);
+            color: white;
+            padding: 14px 30px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(26, 109, 186, 0.3);
+            border: none;
+            cursor: pointer;
+            font-size: 1.05rem;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(26, 109, 186, 0.4);
+            background: linear-gradient(135deg, #0d4d8c 0%, #1a6dba 100%);
+        }
+        
+        .btn-call {
+            background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%);
+            box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
+        }
+        
+        .btn-call:hover {
+            background: linear-gradient(135deg, #1e7e34 0%, #28a745 100%);
+            box-shadow: 0 6px 15px rgba(40, 167, 69, 0.4);
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 25px;
+            color: #7f8c8d;
+            font-size: 0.95rem;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+        }
+        
+        ul, ol {
+            padding-left: 20px;
+            margin: 15px 0;
+        }
+        
+        li {
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+        
+        .feature-badge {
+            display: inline-block;
+            background: #e8f4ff;
+            color: #1a6dba;
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 5px 10px 5px 0;
+            border: 1px solid #c5e1ff;
+        }
+        
+        .facility-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .facility-item {
+            background: #f8fafc;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #e1e8f0;
+            transition: all 0.3s ease;
+        }
+        
+        .facility-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        
+        .facility-icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #1a6dba;
+        }
+        
+        .total-area {
+            background: linear-gradient(135deg, #e8f4ff 0%, #d4e7ff 100%);
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 25px 0;
+            border: 2px solid #1a6dba;
+        }
+        
+        .total-area-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #1a6dba;
+            margin: 10px 0;
+        }
+        
+        .total-area-text {
+            font-size: 1.2rem;
+            color: #34495e;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section {
+                padding: 20px;
+            }
+            
+            th, td {
+                padding: 12px 10px;
+            }
+            
+            .building-highlights {
+                grid-template-columns: 1fr;
+            }
+            
+            .overview-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .facility-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-phone {
+                font-size: 1.3rem;
+            }
+            
+            .total-area-number {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>南厂路17号资产A资产B招租方案</h1>
+            <p class="subtitle">整体优质办公楼，总面积约2088.56平方米，国企信誉保障，整栋中央空调，装修精美，设施齐全</p>
+        </header>
+        
+        <section class="section">
+            <h2>项目概述</h2>
+            <div class="building-highlights">
+                <div class="building-card">
+                    <div class="building-tag">南厂路17号资产A</div>
+                    <div class="building-area">1046.56 平方米</div>
+                    <p><strong>楼层：</strong>一至四层</p>
+                    <p><strong>特点：</strong>中央空调，装修精美</p>
+                    <div class="building-details">41间办公室 + 3个会议室 + 4个卫生间</div>
+                </div>
+                <div class="building-card">
+                    <div class="building-tag secondary">南厂路17号资产B</div>
+                    <div class="building-area">约1042 平方米</div>
+                    <p><strong>楼层：</strong>二至四层（办公区）</p>
+                    <p><strong>特点：</strong>配套完善，专属设施</p>
+                    <div class="building-details">23间办公室 + 健身房 + 值班室 + 库房</div>
+                </div>
+            </div>
+            
+            <div class="total-area">
+                <div class="total-area-text">整体总计可租赁面积</div>
+                <div class="total-area-number">约2088.56 平方米</div>
+                <div class="total-area-text">满足不同规模企业的办公需求</div>
+            </div>
+            
+            <div class="overview-grid">
+                <div class="overview-item">
+                    <h4>租赁用途</h4>
+                    <p>除法律法规不允许的，可根据客户需求而定</p>
+                </div>
+                <div class="overview-item">
+                    <h4>租赁期限</h4>
+                    <p>可协商</p>
+                </div>
+                <div class="overview-item">
+                    <h4>租赁方式</h4>
+                    <p>可分租或整体或分层租赁</p>
+                </div>
+                <div class="overview-item">
+                    <h4>区位优势</h4>
+                    <p>贵阳市南厂路核心地段，交通便利，无物业费</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>南厂路17号资产A资产B详情</h2>
+            
+            <h3>1. 南厂路17号资产A（1046.56㎡）</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>楼层</th>
+                        <th>房间配置</th>
+                        <th>面积</th>
+                        <th>适合用途</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>一楼</td>
+                        <td>8间办公室 + 1个卫生间</td>
+                        <td>约261.64㎡</td>
+                        <td>接待、展示、前台办公</td>
+                    </tr>
+                    <tr>
+                        <td>二楼</td>
+                        <td>11间办公室 + 1个会议室 + 1个卫生间</td>
+                        <td>约261.64㎡</td>
+                        <td>部门办公、团队协作</td>
+                    </tr>
+                    <tr>
+                        <td>三楼</td>
+                        <td>11间办公室 + 1个会议室 + 1个卫生间</td>
+                        <td>约261.64㎡</td>
+                        <td>研发、创意、专业团队</td>
+                    </tr>
+                    <tr>
+                        <td>四楼</td>
+                        <td>11间办公室 + 1个会议室 + 1个卫生间</td>
+                        <td>约261.64㎡</td>
+                        <td>高管办公室、重要部门</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="highlight">
+                <p><strong>特别说明：</strong>租赁面积1046.56 平方米（不含会客室）。带中央空调，装修精美，每层均具备卫生间，二至四层设有会议室，满足日常办公及会议需求。</p>
+            </div>
+        </section>
+            
+            <h3>2. 南厂路17号资产B（约1042㎡）</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>楼层</th>
+                        <th>房间配置</th>
+                        <th>面积</th>
+                        <th>功能特点</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>二层</td>
+                        <td>8间办公室</td>
+                        <td>约347㎡</td>
+                        <td>标准办公间，采光良好</td>
+                    </tr>
+                    <tr>
+                        <td>三层</td>
+                        <td>8间办公室</td>
+                        <td>约347㎡</td>
+                        <td>标准办公间，安静环境</td>
+                    </tr>
+                    <tr>
+                        <td>四层</td>
+                        <td>7间办公室</td>
+                        <td>约304㎡</td>
+                        <td>宽敞办公室，视野开阔</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="highlight">
+                <p><strong>特别说明：</strong>租赁总面积约1042平方米（不含附属门面面积），包含健身房、值班室、库房等专属设施。</p>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>配套设施</h2>
+            <div class="facility-grid">
+                <div class="facility-item">
+                    <div class="facility-icon">🏢</div>
+                    <h4>中央空调</h4>
+                    <p>中央空调系统，冬暖夏凉</p>
+                </div>
+                <div class="facility-item">
+                    <div class="facility-icon">💪</div>
+                    <h4>员工健身房</h4>
+                    <p>附带独立卫生间</p>
+                </div>
+                <div class="facility-item">
+                    <div class="facility-icon">🅿️</div>
+                    <h4>停车位</h4>
+                    <p>室内7个 + 室外5个 = 12个车位</p>
+                </div>
+                <div class="facility-item">
+                    <div class="facility-icon">📞</div>
+                    <h4>24小时值班室</h4>
+                    <p>全天候安全保障</p>
+                </div>
+                <div class="facility-item">
+                    <div class="facility-icon">📦</div>
+                    <h4>库房</h4>
+                    <p>物品存放空间</p>
+                </div>
+                <div class="facility-item">
+                    <div class="facility-icon">🛋️</div>
+                    <h4>精装修</h4>
+                    <p>现代化办公装修</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 20px;">
+                <span class="feature-badge">中央空调系统</span>
+                <span class="feature-badge">精装修办公空间</span>
+                <span class="feature-badge">独立卫生间</span>
+                <span class="feature-badge">专业会议室</span>
+                <span class="feature-badge">员工健身房</span>
+                <span class="feature-badge">停车位</span>
+                <span class="feature-badge">24小时值班室</span>
+                <span class="feature-badge">专用库房</span>
+                <span class="feature-badge">高速网络接入</span>
+                <span class="feature-badge">监控安防系统</span>
+                <span class="feature-badge">现代消防设施</span>
+                <span class="feature-badge">独立电表水表</span>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>租赁优势</h2>
+            <ul>
+                <li><strong>区位优越：</strong>位于贵阳市南厂路核心地段，交通便利，配套设施完善</li>
+                <li><strong>规模适中：</strong>整体办公楼总面积约2088.56平方米，满足中小型及成长型企业需求</li>
+                <li><strong>设施完善：</strong>中央空调，精装修，配备健身房、充足停车位等配套设施</li>
+                <li><strong>灵活租赁：</strong>支持部分、分层、整体租赁，租期灵活，满足多样化需求</li>
+                <li><strong>国企背景：</strong>出租方为贵州武岳实业集团有限公司，信誉可靠，服务保障</li>
+                <li><strong>成本优势：</strong>相比单独租赁多处办公场所，整体租赁成本更低，管理更方便</li>
+            </ul>
+        </section>
+        
+        <section class="section">
+            <h2>适用客户群体</h2>
+            <div class="overview-grid">
+                <div class="overview-item">
+                    <h4>中型企业</h4>
+                    <p>快速发展需要扩大办公空间的企业</p>
+                </div>
+                <div class="overview-item">
+                    <h4>专业机构</h4>
+                    <p>律师事务所、会计师事务所、设计院等</p>
+                </div>
+                <div class="overview-item">
+                    <h4>服务机构</h4>
+                    <p>民宿、酒店等</p>
+                </div>
+                <div class="overview-item">
+                    <h4>科技公司</h4>
+                    <p>研发中心、技术团队、互联网企业</p>
+                </div>
+                <div class="overview-item">
+                    <h4>教育培训</h4>
+                    <p>培训学校、教育机构、职业培训中心</p>
+                </div>
+                <div class="overview-item">
+                    <h4>医疗机构</h4>
+                    <p>医疗管理公司、健康管理机构</p>
+                </div>
+                <div class="overview-item">
+                    <h4>政府外包</h4>
+                    <p>政府服务外包机构、事业单位改革机构</p>
+                </div>
+                <div class="overview-item">
+                    <h4>创业团队</h4>
+                    <p>需要专业办公环境的初创企业</p>
+                </div>
+                <div class="overview-item">
+                    <h4>区域总部</h4>
+                    <p>设立贵阳区域中心的外地企业</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>租赁方案</h2>
+            
+            <h3>方案一：整体租赁（最优）</h3>
+            <ul>
+                <li>租赁整体办公楼全部面积（约2088.56平方米）</li>
+                <li>适合快速发展中的中型企业</li>
+                <li>享受整体租赁优惠价格</li>
+                <li>统一管理，效率更高</li>
+            </ul>
+            
+            <h3>方案二：部分租赁</h3>
+            <ul>
+                <li><strong>南厂路17号资产A：</strong>1046.56平方米，41间办公室</li>
+                <li><strong>南厂路17号资产B：</strong>约1042平方米，23间办公室</li>
+                <li>适合需要独立办公空间的企业</li>
+                <li>可根据企业规模选择</li>
+            </ul>
+            
+            <h3>方案三：分层租赁（仅南厂路17号资产B支持）</h3>
+            <ul>
+                <li>按楼层为单位租赁</li>
+                <li>适合中小型企业、创业团队</li>
+                <li>灵活性高，可根据发展需要调整</li>
+                <li>最小起租面积：约260平方米（一层）</li>
+            </ul>
+            
+            <div class="highlight">
+                <p><strong>租金说明：</strong>具体租金标准根据租赁面积、租期等因素协商确定，欢迎来电咨询详谈。</p>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>租赁流程</h2>
+            <ol>
+                <li><strong>咨询联系：</strong>直接联系租赁负责人田先生（电话：15761631081）</li>
+                <li><strong>现场看房：</strong>预约实地考察，了解办公楼详情</li>
+                <li><strong>方案洽谈：</strong>根据需求制定个性化租赁方案</li>
+                <li><strong>签订合同：</strong>确认租赁意向后，签订《房屋租赁合同》及附件</li>
+                <li><strong>支付费用：</strong>支付履约保证金及首期租金</li>
+                <li><strong>入驻办公：</strong>完成交接，入驻使用</li>
+            </ol>
+        </section>
+        
+        <section class="section">
+            <h2>联系方式</h2>
+            <div class="contact-info">
+                <div class="contact-card">
+                    <h3>出租单位</h3>
+                    <p>贵州武岳实业集团有限公司</p>
+                </div>
+                <div class="contact-card">
+                    <h3>租赁负责人</h3>
+                    <p>田先生</p>
+                    <div class="contact-phone">15761631081</div>
+                    <p>直接联系电话</p>
+                </div>
+                <div class="contact-card">
+                    <h3>办公地址</h3>
+                    <p>贵阳市南厂路17号</p>
+                    <p>及机关办公楼</p>
+                </div>
+                <div class="contact-card">
+                    <h3>租赁面积</h3>
+                    <p>总计约2088.56㎡</p>
+                    <p>两栋优质办公楼</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 25px;">
+                <a href="tel:15761631081" class="btn btn-call">
+                    <span style="font-size: 1.2rem;">📞</span> 立即致电：15761631081
+                </a>
+                <p style="margin-top: 15px; color: #666;">直接联系田先生，获取详细租赁信息</p>
+            </div>
+        </section>
+        
+        <section class="section">
+            <h2>附件（可供索取）</h2>
+            <ul>
+                <li>《房屋租赁合同》范本</li>
+                <li>《房屋租金一览表》</li>
+                <li>《安全责任管理承诺书》</li>
+                <li>企业信用报告（出租方）</li>
+            </ul>
+        </section>
+        
+        <footer>
+            <p>© 2026 贵州武岳实业集团有限公司 版权所有</p>
+            <p>本招租方案最终解释权归贵州武岳实业集团有限公司所有</p>
+            <p>地址：贵阳市南厂路17号 联系人：田先生 电话：15761631081</p>
+            <p style="margin-top: 10px; font-size: 0.85rem; color: #95a5a6;">国企信誉保障 · 专业办公空间 · 灵活租赁方案</p>
+        </footer>
+    </div>
+
+    <script>
+        // 添加简单的交互效果
+        document.addEventListener('DOMContentLoaded', function() {
+            // 为所有卡片添加点击效果
+            const cards = document.querySelectorAll('.building-card, .contact-card, .overview-item, .facility-item');
+            cards.forEach(card => {
+                card.addEventListener('click', function() {
+                    this.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 200);
+                });
+            });
+            
+            // 添加滚动动画效果
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // 观察所有区域
+            document.querySelectorAll('.section').forEach(section => {
+                section.style.opacity = 0;
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                observer.observe(section);
+            });
+            
+            // 为功能标签添加鼠标悬停效果
+            const badges = document.querySelectorAll('.feature-badge');
+            badges.forEach(badge => {
+                badge.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-3px)';
+                    this.style.boxShadow = '0 4px 8px rgba(0,0,0,0.1)';
+                });
+                
+                badge.addEventListener('mouseleave', function() {
+                    this.style.transform = '';
+                    this.style.boxShadow = '';
+                });
+            });
+            
+            // 电话号码点击复制功能
+            const phoneElement = document.querySelector('.contact-phone');
+            if (phoneElement) {
+                phoneElement.style.cursor = 'pointer';
+                phoneElement.title = '点击复制电话号码';
+                
+                phoneElement.addEventListener('click', function() {
+                    const phoneNumber = this.textContent;
+                    navigator.clipboard.writeText(phoneNumber).then(() => {
+                        const originalText = this.textContent;
+                        this.textContent = '已复制到剪贴板！';
+                        this.style.color = '#28a745';
+                        
+                        setTimeout(() => {
+                            this.textContent = originalText;
+                            this.style.color = '#28a745';
+                        }, 1500);
+                    });
+                });
+            }
+        });
+    </script>
+</head>
+</html>
